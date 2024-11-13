@@ -1,12 +1,38 @@
+import 'package:flutter/material.dart';
 
-class Animal {
-  String name;
-  int age;
-
-  Animal({required this.name, required this.age});
+void main(List<String> args) {
+  runApp(const MyAppForLesson3());
 }
 
-void main() {
-  Animal myAnimal = Animal(name: 'Lion', age: 5);
-  print('Name: ${myAnimal.name}, Age: ${myAnimal.age}');
+class MyAppForLesson3 extends StatelessWidget {
+  const MyAppForLesson3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: Lesson3HomePage());
+  }
+}
+
+class Lesson3HomePage extends StatelessWidget {
+  const Lesson3HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Title'),
+      ),
+      body: const Center(
+          child: Column(
+        children: [
+          Text('Lesson 3 - HomePage'),
+        ],
+        mainAxisAlignment: MainAxisAlignment.center,
+      )),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.plus_one),
+        onPressed: () {},
+      ),
+    );
+  }
 }
