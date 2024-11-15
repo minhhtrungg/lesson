@@ -54,15 +54,19 @@ class HomePageState extends State<Lesson3HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Title'),
+        centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Lesson 3 - HomePage'),
-            const Text('Số lần click:'),
-            Text('$counter'),
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+               Text('Lesson 3 - HomePage'),
+               Text('Số lần click:'),
+              Text( '$counter', style: Theme.of(context).textTheme.headlineMedium, ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -76,3 +80,4 @@ class HomePageState extends State<Lesson3HomePage> {
     );
   }
 }
+// 1 12 15
