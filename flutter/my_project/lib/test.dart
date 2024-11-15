@@ -57,18 +57,44 @@ class HomePageState extends State<Lesson3HomePage> {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Center(
+          child: Center(
+        child: Padding(
+          padding: EdgeInsets.all(50.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-               Text('Lesson 3 - HomePage'),
-               Text('Số lần click:'),
-              Text( '$counter', style: Theme.of(context).textTheme.headlineMedium, ),
+              Text('Lesson 3 - HomePage'),
+              Text('Số lần click:'),
+              Text(
+                '$counter',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.network(
+                    'https://scontent.fsgn8-3.fna.fbcdn.net/v/t39.30808-6/465649058_122158654700267696_8318922429191506378_n.jpg?stp=cp6_dst-jpg&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=LXvPi9SgRxoQ7kNvgHkfOMO&_nc_zt=23&_nc_ht=scontent.fsgn8-3.fna&_nc_gid=A9u2pWCNVdIkguvQmPLH6n8&oh=00_AYB8KBfQ6mVdh536Gvv6Fh97wj5XhMzqW95Dq_-SMFfdcg&oe=673D7DD9',
+                    width: 250,
+                    height: 200,
+                  ),
+                ],
+              ),
+              TextField(),
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('hoan thanh'),
+                    ),
+                  );
+                },
+                child: Text('Click me'),
+              ),
             ],
           ),
         ),
-      ),
+      )),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
